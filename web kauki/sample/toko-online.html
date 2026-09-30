@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>LittleCharm - Pakaian Lembut untuk Si Kecil</title>
+    <!-- Google Fonts: Poppins untuk tampilan modern dan ramah -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (Free Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #FEF9F4;  /* soft cream background */
+            color: #4A3B2C;
+            scroll-behavior: smooth;
+        }
+
+        /* warna soft & menarik: pastel peach, mint, lavender, soft pink */
+        :root {
+            --soft-peach: #FDE9E0;
+            --soft-mint: #DFF2EB;
+            --soft-lavender: #EBE4F1;
+            --soft-pink: #FFEFEF;
+            --warm-caramel: #C9A384;
+            --main-font: #4A3B2C;
+            --accent-soft: #F3C5B0;
+            --button-hover: #E2B6A0;
+        }
+
+        /* container standar */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* header / navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #B88B6B;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            color: #F0A58F;
+            font-weight: 800;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #5F4A37;
+            transition: 0.2s ease;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: #D98F6C;
+        }
+
+        .btn-outline-soft {
+            background: transparent;
+            border: 1.5px solid #DBC2B0;
+            padding: 8px 20px;
+            border-radius: 40px;
+            transition: all 0.2s;
+        }
+
+        .btn-outline-soft:hover {
+            background: #DBC2B0;
+            color: white;
+            border-color: #DBC2B0;
+        }
+
+        /* hero section */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 40px 0 60px 0;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text .badge {
+            background: #FFEFE5;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #C28562;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            line-height: 1.2;
+            font-weight: 700;
+            color: #533E2A;
+            margin-bottom: 18px;
+        }
+
+        .hero-text h1 span {
+            color: #F0A994;
+            font-weight: 800;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #6F5843;
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+
+        .btn-primary {
+            background: #EEC2AB;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #4F3624;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.02);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            background: #E2AE93;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 18px rgba(210, 140, 100, 0.15);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 60% 40% 50% 50% / 45% 40% 60% 55%;
+            background: #FFEFE8;
+            padding: 20px;
+            box-shadow: 0 25px 35px -12px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.01);
+        }
+
+        /* kategori produk */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 60px 0 30px 0;
+            position: relative;
+            color: #57412D;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: #F5CEBA;
+            margin: 12px auto 0;
+            border-radius: 4px;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .cat-card {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            box-shadow: 0 8px 12px rgba(0,0,0,0.02);
+            border: 1px solid #FFF0E7;
+            transition: all 0.2s;
+            cursor: pointer;
+            background: #FFFFFFD9;
+        }
+
+        .cat-card i {
+            font-size: 1.6rem;
+            color: #DCAA90;
+        }
+
+        .cat-card:hover {
+            background: #FFF6F0;
+            transform: translateY(-3px);
+            border-color: #F0C6AF;
+        }
+
+        /* produk grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 32px;
+            margin: 40px 0 60px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 36px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 12px 20px rgba(0,0,0,0.03);
+            border: 1px solid #FBE9E0;
+            backdrop-filter: blur(2px);
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 30px -12px rgba(97, 62, 42, 0.12);
+            border-color: #FADDCB;
+        }
+
+        .product-img {
+            background: #FEF5EF;
+            text-align: center;
+            padding: 32px 16px 24px;
+        }
+
+        .product-img img {
+            width: 70%;
+            max-height: 170px;
+            object-fit: contain;
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.02);
+        }
+
+        .product-info {
+            padding: 20px 18px 24px;
+        }
+
+        .product-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #493728;
+        }
+
+        .product-desc {
+            font-size: 0.85rem;
+            color: #9B7A62;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .price {
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: #CF9F82;
+            margin-bottom: 16px;
+        }
+
+        .btn-add {
+            background: #FCF3ED;
+            border: none;
+            width: 100%;
+            padding: 12px 0;
+            border-radius: 40px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #BE8A6A;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-add:hover {
+            background: #F3DECF;
+            color: #A26F4F;
+        }
+
+        /* testimoni section soft */
+        .testimonials {
+            background: #FFF9F5;
+            border-radius: 64px;
+            padding: 48px 24px;
+            margin: 50px 0;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+        }
+
+        .testi-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+            margin-top: 32px;
+        }
+
+        .testi-card {
+            background: white;
+            border-radius: 44px;
+            padding: 28px 24px;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            border: 1px solid #F5E2D6;
+        }
+
+        .testi-card i {
+            font-size: 2rem;
+            color: #F0C2A8;
+            margin-bottom: 16px;
+        }
+
+        .testi-card p {
+            font-style: italic;
+            color: #5E4634;
+            margin: 16px 0;
+            font-size: 0.95rem;
+        }
+
+        .testi-card h4 {
+            font-weight: 600;
+            color: #B6896B;
+        }
+
+        /* CTA section */
+        .cta-section {
+            background: #FCEBE2;
+            border-radius: 70px;
+            padding: 50px 30px;
+            text-align: center;
+            margin: 50px 0 70px;
+        }
+
+        .cta-section h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #5A3F2C;
+        }
+
+        .cta-section p {
+            max-width: 500px;
+            margin: 0 auto 28px;
+            color: #846C57;
+        }
+
+        /* footer */
+        footer {
+            background: #FFFFFFDE;
+            border-top: 1px solid #F2E1D6;
+            padding: 40px 0 30px;
+            text-align: center;
+            color: #9C7C63;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            color: #CAA183;
+            font-size: 1.4rem;
+            transition: 0.2s;
+        }
+
+        .social-icons a:hover {
+            color: #AD7C5E;
+        }
+
+        /* notifikasi toast */
+        .toast-notif {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) scale(0.9);
+            background: #4B3624;
+            color: #FFEFE4;
+            padding: 12px 28px;
+            border-radius: 60px;
+            font-weight: 500;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+            z-index: 999;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(4px);
+            font-size: 0.9rem;
+        }
+        .toast-notif.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) scale(1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            .navbar {
+                flex-direction: column;
+            }
+            .nav-links {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .section-title {
+                font-size: 1.7rem;
+            }
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .btn-primary {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="toast-notif" id="cartToast">✨ Ditambahkan ke keranjang! ✨</div>
+
+<nav class="container">
+    <div class="navbar">
+        <div class="logo">Little<span>Charm</span></div>
+        <ul class="nav-links">
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#products">Koleksi</a></li>
+            <li><a href="#testi">Testimoni</a></li>
+            <li><a href="#" class="btn-outline-soft">Kontak</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <!-- Hero Section -->
+    <div class="container">
+        <div class="hero">
+            <div class="hero-text">
+                <div class="badge">✨ Pakaian Ramah Anak ✨</div>
+                <h1>Lembut di Kulit, <span>Menarik di Mata</span></h1>
+                <p>Koleksi baju anak dengan warna pastel lembut & bahan premium yang membuat si kecil bebas bergerak dan tampil menggemaskan setiap hari.</p>
+                <button class="btn-primary" id="exploreBtn">Jelajahi Koleksi <i class="fas fa-arrow-right"></i></button>
+            </div>
+            <div class="hero-image">
+                <img src="./public/toko-online.png" alt="Baju anak lucu ilustrasi">
+                <!-- Catatan: gambar placeholder, bisa diganti dengan aset produk asli -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Kategori soft -->
+    <div class="container">
+        <div class="section-title" style="margin-top: 20px;">Koleksi Soft Favorit</div>
+        <div class="categories">
+            <div class="cat-card"><i class="fas fa-tshirt"></i> <span>One set</span></div>
+            <div class="cat-card"><i class="fas fa-baby-carriage"></i> <span>Baby (0-12 bln)</span></div>
+            <div class="cat-card"><i class="fas fa-child"></i> <span>Balita (1-4 thn)</span></div>
+            <div class="cat-card"><i class="fas fa-cloud-moon"></i> <span>Piyama Lembut</span></div>
+        </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="container" id="products">
+        <div class="section-title">✨ Pilihan Terbaru ✨</div>
+        <div class="products-grid" id="productGrid">
+            <!-- produk akan di inject via JS (atau bisa manual) biar interaktif -->
+        </div>
+    </div>
+
+    <!-- Testimonial Section -->
+    <div class="container" id="testi">
+        <div class="testimonials">
+            <div class="section-title" style="margin-top: 0; margin-bottom: 10px;">Apa Kata Mama Papa?</div>
+            <div class="testi-flex">
+                <div class="testi-card">
+                    <i class="fas fa-star" style="color:#FAD0B5;"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <p>"Bahannya super lembut, cucinya tidak mudah luntur. Warna pastelnya bikin anakku tambah gemas!"</p>
+                    <h4>— Ibu Rina</h4>
+                </div>
+                <div class="testi-card">
+                    <i class="fas fa-heart" style="color: #FAC6AC;"></i>
+                    <p>"Pengiriman cepat, desainnya unique dan soft. Sangat cocok untuk anak yang sensitif terhadap bahan kasar."</p>
+                    <h4>— Bapak Dimas</h4>
+                </div>
+                <div class="testi-card">
+                    <i class="fas fa-smile-wink"></i>
+                    <p>"LittleCharm jadi langganan favorit! Koleksi terbaru selalu menarik dan warna-warna yang menenangkan."</p>
+                    <h4>— Mama Shela</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Banner -->
+    <div class="container">
+        <div class="cta-section">
+            <h3>Dapatkan Diskon 15% untuk Member Baru!</h3>
+            <p>Bergabunglah dengan newsletter kami dan dapatkan kupon belanja langsung di email.</p>
+            <button class="btn-primary" id="subscribeCta"><i class="fas fa-envelope"></i> Berlangganan Sekarang</button>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>© 2025 LittleCharm - Pakaian Anak Penuh Kelembutan & Warna Ceria</p>
+        <p style="font-size: 0.75rem; margin-top: 8px;">Desain ramah kulit, warna soft premium.</p>
+    </div>
+</footer>
+
+<script>
+    // Data produk (baju anak dengan warna soft & menarik)
+    const products = [
+        { id: 1, name: "Setel Putri Mint", desc: "Bawahan + atasan katun organik, warna mint segar", price: 129000, imgIcon: "👗", tag: "soft mint" },
+        { id: 2, name: "Baju Tidur Kelinci", desc: "Piyama motif kelinci, bahan bamboo soft", price: 99000, imgIcon: "🐰", tag: "pajama" },
+        { id: 3, name: "Dress Lavender Dream", desc: "Gaun anak dengan sabuk pita, warna lavender lembut", price: 159000, imgIcon: "🌸", tag: "dress" },
+        { id: 4, name: "Kemeja Linen Peach", desc: "Kemeja katun linen warna peach, nyaman dipakai", price: 119000, imgIcon: "🍑", tag: "shirt" },
+        { id: 5, name: "Setel Baby Boy Sage", desc: "Setelan sage hijau, full katun", price: 139000, imgIcon: "💚", tag: "baby" },
+        { id: 6, name: "Cardigan Rajut Milky", desc: "Cardigan halus warna cream susu, hangat & lucu", price: 149000, imgIcon: "🧶", tag: "cardigan" }
+    ];
+
+    // Fungsi untuk render produk ke grid
+    function renderProducts() {
+        const grid = document.getElementById('productGrid');
+        if (!grid) return;
+        grid.innerHTML = '';
+        products.forEach(product => {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            // Menggunakan Emoji + background subtle (ganti gambar menjadi figuratif soft)
+            card.innerHTML = `
+                <div class="product-img">
+                    <div style="font-size: 5rem; line-height: 1.2;">${product.imgIcon}</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-title">${product.name}</div>
+                    <div class="product-desc">${product.desc}</div>
+                    <div class="price">Rp ${product.price.toLocaleString('id-ID')}</div>
+                    <button class="btn-add" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}">
+                        <i class="fas fa-shopping-bag"></i> Tambah ke Keranjang
+                    </button>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+
+        // Tambahkan event listener ke semua tombol 'Tambah ke Keranjang' setelah render
+        document.querySelectorAll('.btn-add').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const id = btn.getAttribute('data-id');
+                const name = btn.getAttribute('data-name');
+                const price = btn.getAttribute('data-price');
+                showToast(`🧸 ${name} ditambahkan ke keranjang!`);
+                // bisa juga console log untuk simulasi cart
+                console.log(`Produk ditambahkan: ${name} - Rp ${Number(price).toLocaleString()}`);
+            });
+        });
+    }
+
+    // Toast notifikasi
+    let toastTimeout;
+    function showToast(message) {
+        const toast = document.getElementById('cartToast');
+        if (!toast) return;
+        toast.textContent = message || '✨ Ditambahkan ke keranjang! ✨';
+        toast.classList.add('show');
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2200);
+    }
+
+    // Smooth scroll untuk tombol explore
+    const exploreBtn = document.getElementById('exploreBtn');
+    if (exploreBtn) {
+        exploreBtn.addEventListener('click', () => {
+            const productsSection = document.getElementById('products');
+            if (productsSection) {
+                productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                showToast("✨ Temukan koleksi lembut favoritmu! ✨");
+            }
+        });
+    }
+
+    // CTA subscribe simulasi
+    const subscribeBtn = document.getElementById('subscribeCta');
+    if (subscribeBtn) {
+        subscribeBtn.addEventListener('click', () => {
+            showToast("📧 Terima kasih! Kode diskon 15% sudah dikirim ke email (demo).");
+        });
+    }
+
+    // efek untuk kategori (sekedar interaksi)
+    const categoryCards = document.querySelectorAll('.cat-card');
+    categoryCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const text = card.innerText.trim();
+            showToast(`🔍 Menampilkan koleksi ${text} (demo interaksi)`);
+            // optional - filtering bisa ditambah jika ingin lebih advance
+        });
+    });
+
+    // Inisialisasi render pertama
+    renderProducts();
+
+    // tambahkan slight effect hover untuk hero image jika ingin (tidak wajib)
+    const heroImg = document.querySelector('.hero-image img');
+    if (heroImg) {
+        heroImg.addEventListener('mouseenter', () => {
+            heroImg.style.transition = 'transform 0.2s';
+        });
+    }
+
+    // Minor: aktifkan smooth behavior untuk semua anchor link (internal)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === "#" || targetId === "") return;
+            const targetElem = document.querySelector(targetId);
+            if (targetElem) {
+                e.preventDefault();
+                targetElem.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // animasi tambahan: sederhana, memberikan kehangatan loading
+    window.addEventListener('load', () => {
+        console.log("Landing page LittleCharm siap — warna soft untuk si kecil");
+    });
+</script>
+</body>
+</html>

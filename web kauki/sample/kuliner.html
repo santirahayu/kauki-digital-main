@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Izakaya Rempah - Rumah Makan Jepang & Fusion</title>
+    <!-- Google Fonts untuk nuansa Jepang modern -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (Free Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fefaf5;
+            color: #2e241f;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Kiwi Maru', serif;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 248, 240, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            z-index: 100;
+            padding: 16px 0;
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #c04a2c;
+        }
+
+        .logo span {
+            color: #2c5f2d;
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #3b2a23;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #c04a2c;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(105deg, #fff3e8 0%, #fee9dd 100%);
+            border-radius: 0 0 40px 40px;
+            padding: 60px 0 70px;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #261c16;
+        }
+
+        .hero-text .accent {
+            color: #c04a2c;
+            border-bottom: 3px solid #f5b48c;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #4f3e34;
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            background: #c04a2c;
+            color: white;
+            box-shadow: 0 4px 8px rgba(192,74,44,0.3);
+        }
+
+        .btn-primary:hover {
+            background: #a33c20;
+            transform: scale(1.02);
+        }
+
+        .btn-outline {
+            border: 2px solid #c04a2c;
+            color: #c04a2c;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: #c04a2c10;
+        }
+
+        .hero-img {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-img img {
+            max-width: 100%;
+            border-radius: 48px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2);
+        }
+
+        /* Section umum */
+        section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.4rem;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: #c04a2c;
+            margin: 12px auto 0;
+            border-radius: 4px;
+        }
+
+        /* Menu Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+            transition: all 0.25s ease;
+            border: 1px solid #ffe1cf;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
+        }
+
+        .card-img {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .card-content {
+            padding: 20px 20px 24px;
+        }
+
+        .card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            color: #c04a2c;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: 12px 0 6px;
+        }
+
+        .desc {
+            color: #5a4a3e;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .badge-cat {
+            display: inline-block;
+            background: #f7e3d6;
+            color: #b14326;
+            font-size: 0.7rem;
+            padding: 4px 12px;
+            border-radius: 30px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        /* Kategori Tab */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .tab-btn {
+            background: #f2e3da;
+            border: none;
+            padding: 10px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            color: #3b2a23;
+        }
+
+        .tab-btn.active {
+            background: #c04a2c;
+            color: white;
+            box-shadow: 0 4px 8px rgba(192,74,44,0.3);
+        }
+
+        /* Testimoni ringan */
+        .testi {
+            background: #fff3ea;
+            border-radius: 48px;
+        }
+
+        .testi-grid {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .testi-card {
+            background: white;
+            max-width: 320px;
+            padding: 28px 24px;
+            border-radius: 32px;
+            text-align: center;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+        }
+
+        .testi-card i {
+            font-size: 2.2rem;
+            color: #c04a2c;
+            margin-bottom: 12px;
+        }
+
+        .testi-card p {
+            font-style: italic;
+            margin: 16px 0;
+            color: #2c241f;
+        }
+
+        /* Footer + Contact */
+        .footer {
+            background: #261c16;
+            color: #e9dcd2;
+            padding: 48px 0 32px;
+            border-radius: 40px 40px 0 0;
+        }
+
+        .footer-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 32px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+            color: #f1cfbc;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #cdb6a8;
+            text-decoration: none;
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-col a:hover {
+            color: #ffb185;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            font-size: 0.85rem;
+            border-top: 1px solid #3e2c23;
+            margin-top: 32px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2.3rem;
+            }
+            .nav-flex {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .nav-links {
+                gap: 1.2rem;
+            }
+            .section-title {
+                font-size: 1.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container nav-flex">
+        <div class="logo">Izaken<span> & Rempah</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#testimoni">Kesan</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <!-- Hero / Home Section -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1>Ramen, Sushi, <span class="accent">Kenikmatan Nusantara</span> & Matcha Istimewa</h1>
+                <p>Perpaduan cita rasa Jepang autentik dengan sentuhan lokal. Dari Ramen gurih, Rice Bowl menggoda, hingga Chicken Wings Spicy dan Kimchi segar. Temani dengan kopi, matcha, atau teh leci!</p>
+                <div class="btn-group">
+                    <a href="#menu" class="btn btn-primary"><i class="fas fa-utensils"></i> Lihat Menu</a>
+                    <a href="#kontak" class="btn btn-outline"><i class="fas fa-map-marker-alt"></i> Reservasi</a>
+                </div>
+            </div>
+            <div class="hero-img">
+                <!-- ilustrasi makanan (placehold image style) -->
+                <img src="./public/kuliner.png" alt="Ramen dan Sushi ilustrasi" style="background:#f5e2d4; object-fit:cover;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section dengan filter kategori (JavaScript untuk tab interaktif) -->
+    <section id="menu">
+        <div class="container">
+            <h2 class="section-title">🍣 Signature Menu 🍜</h2>
+            <div class="tabs" id="menuTabs">
+                <button class="tab-btn active" data-filter="all">Semua</button>
+                <button class="tab-btn" data-filter="makanan">Makanan</button>
+                <button class="tab-btn" data-filter="minuman">Minuman</button>
+            </div>
+
+            <div class="menu-grid" id="menuGrid">
+                <!-- Data menu akan diisi via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni & kesan pelanggan -->
+    <section id="testimoni" class="testi">
+        <div class="container">
+            <h2 class="section-title">🍥 Kata Pelanggan 🍥</h2>
+            <div class="testi-grid">
+                <div class="testi-card">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <p>"Ramennya kaldu kaya rasa, chicken wings spicy bikin nagih! Matcha latte-nya creamy banget. Best combo!"</p>
+                    <h4>— Rina, Foodie</h4>
+                </div>
+                <div class="testi-card">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <p>"Sushi segar, kimchi homemade pedas pas. Teh leci wangi & menyegarkan. Suasana cozy, wajib coba rice bowl teriyaki."</p>
+                    <h4>— Aditya, Komuter</h4>
+                </div>
+                <div class="testi-card">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    <p>"Kopi manual brew enak pilihan bijinya, menemani ramen tonkotsu. Harga bersahabat, porsi besar!"</p>
+                    <h4>— Maya, Kolektor Kopi</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak & Info Lokasi -->
+    <section id="kontak">
+        <div class="container" style="background:#fff6ef; border-radius: 48px; padding: 48px 32px;">
+            <div class="footer-flex">
+                <div class="footer-col">
+                    <h4><i class="fas fa-store"></i> Izaken & Rempah</h4>
+                    <p><i class="fas fa-map-pin"></i> Jl. Cita Rasa No. 88, Jakarta Selatan</p>
+                    <p><i class="fas fa-clock"></i> Buka setiap hari: 10:00 - 22:00 (Jum'at-Minggu hingga 23:00)</p>
+                    <p><i class="fas fa-phone-alt"></i> +62 812-3456-7890</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Hubungi Kami</h4>
+                    <p><i class="fab fa-instagram"></i> @izaken_rempah</p>
+                    <p><i class="fab fa-whatsapp"></i> 0812-3456-7890 (Reservasi)</p>
+                    <p><i class="fas fa-envelope"></i> hello@izakenrempah.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Layanan Pesan Antar</h4>
+                    <p><i class="fas fa-motorcycle"></i> GoFood & GrabFood tersedia</p>
+                    <p><i class="fas fa-credit-card"></i> Terima QRIS / Tunai</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="copyright">
+            <p>&copy; 2025 Izaken & Rempah — Rumah Makan Jepang & Fusion. Nikmati Ramen, Rice Bowl, Sushi, Kimchi & Chicken Wings Spicy bersama kopi/matcha terbaik.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // DAFTAR MENU lengkap sesuai permintaan: ramen, rice bowl, sushi, kimchi, chicken wings spicy, 
+    // minuman: coffe, matcha, teh leci, dan lain lain (ditambah es teh, lemon tea, dll)
+    const menuData = [
+        // Makanan
+        { id: 1, name: "Ramen Tonkotsu", category: "makanan", price: "Rp 45.000", desc: "Kuah krim babat tulang ayam & babi, topping chashu, nori, telur ajitsuke.", imgLabel: "🍜", tag: "Ramen" },
+        { id: 2, name: "Ramen Spicy Miso", category: "makanan", price: "Rp 48.000", desc: "Pedas gurih dengan miso, daging ayam rebus, jamur shiitake.", imgLabel: "🌶️🍜", tag: "Ramen" },
+        { id: 3, name: "Chicken Teriyaki Rice Bowl", category: "makanan", price: "Rp 42.000", desc: "Grilled chicken dengan saus teriyaki, telur onsen, sayuran segar.", imgLabel: "🍗🍚", tag: "Rice Bowl" },
+        { id: 4, name: "Beef Yakiniku Rice Bowl", category: "makanan", price: "Rp 52.000", desc: "Sapi slice bumbu yakiniku, nasi hangat, mayones pedas.", imgLabel: "🥩🍚", tag: "Rice Bowl" },
+        { id: 5, name: "Salmon Sushi Roll (6 pcs)", category: "makanan", price: "Rp 58.000", desc: "Salmon segar, timun, alpukat, dan nasi sushi premium.", imgLabel: "🍣", tag: "Sushi" },
+        { id: 6, name: "Ebi Tempura Maki", category: "makanan", price: "Rp 55.000", desc: "Udang crispy, kani, mayones, saus unagi.", imgLabel: "🍤🍣", tag: "Sushi" },
+        { id: 7, name: "Kimchi Homemade", category: "makanan", price: "Rp 18.000", desc: "Fermentasi kimchi style Korea, pedas asam segar. Sempurna untuk pendamping.", imgLabel: "🥬🔥", tag: "Kimchi" },
+        { id: 8, name: "Korean Spicy Chicken Wings", category: "makanan", price: "Rp 49.000", desc: "Sayap ayam krispi dilumuri saus gochujang extra spicy + madu.", imgLabel: "🍗🔥", tag: "Chicken Wings" },
+        { id: 9, name: "Miso Glazed Wings", category: "makanan", price: "Rp 47.000", desc: "Varian manis gurih miso, cocok untuk yang tidak terlalu pedas.", imgLabel: "🍗", tag: "Chicken Wings" },
+        // Minuman (coffe, matcha, teh leci dan lain-lain)
+        { id: 10, name: "Iced Americano", category: "minuman", price: "Rp 22.000", desc: "Kopi hitam segar dari biji arabika lokal.", imgLabel: "☕", tag: "Coffe" },
+        { id: 11, name: "Honey Latte", category: "minuman", price: "Rp 28.000", desc: "Espresso + susu + madu hutan, smooth.", imgLabel: "🥛☕", tag: "Coffe" },
+        { id: 12, name: "Matcha Latte", category: "minuman", price: "Rp 30.000", desc: "Matcha grade premium dari Uji, creamy dan earthy.", imgLabel: "🍵", tag: "Matcha" },
+        { id: 13, name: "Iced Matcha Espresso", category: "minuman", price: "Rp 34.000", desc: "Perpaduan matcha & espresso, energi boost.", imgLabel: "🍵☕", tag: "Matcha" },
+        { id: 14, name: "Teh Leci", category: "minuman", price: "Rp 22.000", desc: "Teh hitam wangi leci alami, manis menyegarkan.", imgLabel: "🧋🌸", tag: "Teh Leci" },
+        { id: 15, name: "Lychee Jasmine Tea", category: "minuman", price: "Rp 24.000", desc: "Melati + leci, tambahan nata de coco.", imgLabel: "🍃", tag: "Teh Leci" },
+        { id: 16, name: "Es Lemon Tea", category: "minuman", price: "Rp 18.000", desc: "Teh hitam dengan lemon zest, segar.", imgLabel: "🍋", tag: "Lainnya" },
+        { id: 17, name: "Yuzu Honey Cooler", category: "minuman", price: "Rp 26.000", desc: "Yuzu citrus + madu, soda. Menyegarkan!", imgLabel: "🍊", tag: "Lainnya" },
+        { id: 18, name: "Strawberry Matcha", category: "minuman", price: "Rp 32.000", desc: "Lapisan stroberi dan matcha latte, instagenic.", imgLabel: "🍓🍵", tag: "Matcha" }
+    ];
+
+    // Fungsi render menu berdasarkan filter (all, makanan, minuman)
+    function renderMenu(filterValue = "all") {
+        const grid = document.getElementById("menuGrid");
+        if (!grid) return;
+        
+        let filteredItems = [];
+        if (filterValue === "all") {
+            filteredItems = menuData;
+        } else {
+            filteredItems = menuData.filter(item => item.category === filterValue);
+        }
+
+        // Buat card HTML
+        let htmlCards = "";
+        filteredItems.forEach(item => {
+            // Emoji random ikon dari imgLabel atau fallback
+            let iconEmoji = item.imgLabel || (item.category === "makanan" ? "🍽️" : "🥤");
+            // badge kategori (makanan / minuman)
+            let categoryBadge = item.category === "makanan" ? "Makanan Signature" : "Minuman Spesial";
+            let bgGradient = item.category === "makanan" ? "linear-gradient(145deg, #ffefe4, #ffdfcf)" : "linear-gradient(145deg, #e9f3e6, #ddebd8)";
+            htmlCards += `
+                <div class="menu-card">
+                    <div class="card-img" style="background: ${bgGradient}; display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+                        ${iconEmoji}
+                    </div>
+                    <div class="card-content">
+                        <span class="badge-cat">${categoryBadge} • ${item.tag || item.name.split(' ')[0]}</span>
+                        <h3>${item.name}</h3>
+                        <div class="price">${item.price}</div>
+                        <p class="desc">${item.desc}</p>
+                    </div>
+                </div>
+            `;
+        });
+        
+        if (filteredItems.length === 0) {
+            htmlCards = `<div style="grid-column:1/-1; text-align:center; padding:40px;">Tidak ada menu untuk kategori ini, coba yang lain ya 🍜✨</div>`;
+        }
+        grid.innerHTML = htmlCards;
+    }
+
+    // Inisialisasi tab filter event
+    function initTabs() {
+        const btns = document.querySelectorAll(".tab-btn");
+        if (btns.length) {
+            btns.forEach(btn => {
+                btn.addEventListener("click", function(e) {
+                    btns.forEach(b => b.classList.remove("active"));
+                    this.classList.add("active");
+                    const filterVal = this.getAttribute("data-filter");
+                    renderMenu(filterVal);
+                });
+            });
+        }
+    }
+
+    // Smooth scroll untuk navigasi
+    function smoothScroll() {
+        document.querySelectorAll('.nav-links a, .btn-primary, .btn-outline').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const hash = this.getAttribute('href');
+                if (hash && hash.startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = hash.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    }
+    
+    // Also handle reservasi / kontak dari tombol reservasi
+    // fungsionalitas siap
+    
+    // Run saat load
+    document.addEventListener("DOMContentLoaded", () => {
+        renderMenu("all");
+        initTabs();
+        smoothScroll();
+        // tambahan sedikit styling hero image jika ingin placeholder diganti? tapi ok
+        // alert selamat datang bisa, namun optional
+        console.log("Landing page Izaken & Rempah siap - Nikmati aneka ramen, rice bowl, sushi, kimchi, chicken wings spicy & coffe matcha teh leci");
+    });
+</script>
+</body>
+</html>

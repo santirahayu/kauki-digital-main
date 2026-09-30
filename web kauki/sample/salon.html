@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>RoseBlush | Salon Kecantikan - Soft Pink Elegance</title>
+    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display untuk elegant modern -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #FFF9FB;
+            color: #4A3B38;
+            scroll-behavior: smooth;
+        }
+
+        /* Soft Pink Professional Palette */
+        :root {
+            --soft-pink-main: #F9D7E2;    /* soft pink utama */
+            --soft-pink-light: #FEF0F4;
+            --blush-pink: #F5C2D0;
+            --dusty-rose: #D9A7B5;
+            --rose-gold: #E3B1BE;
+            --deep-rose: #B2808F;
+            --warm-cream: #FFF5F7;
+            --text-soft: #6B4E58;
+            --text-dark: #4A323C;
+            --white-pure: #FFFFFF;
+            --shadow-soft: 0 20px 30px -12px rgba(210, 130, 150, 0.12);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Navbar soft pink */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #552E3C;
+            letter-spacing: -0.3px;
+        }
+        .logo span {
+            color: var(--dusty-rose);
+            font-weight: 800;
+        }
+        .nav-links {
+            display: flex;
+            gap: 38px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #6E4D59;
+            transition: 0.2s;
+            font-size: 0.95rem;
+        }
+        .nav-links a:hover {
+            color: var(--deep-rose);
+        }
+        .btn-nav {
+            background: transparent;
+            border: 1.5px solid var(--dusty-rose);
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: all 0.2s;
+            color: #A36D7E;
+        }
+        .btn-nav:hover {
+            background: var(--soft-pink-main);
+            border-color: var(--blush-pink);
+            color: #6B3E4C;
+        }
+
+        /* Hero Section Soft Pink */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 30px 0 70px 0;
+        }
+        .hero-content {
+            flex: 1.2;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: #FCE9EF;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #C1869B;
+            margin-bottom: 24px;
+        }
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #562C3D;
+            margin-bottom: 24px;
+        }
+        .hero-content h1 span {
+            color: #DEA1B5;
+            font-style: italic;
+        }
+        .hero-description {
+            font-size: 1rem;
+            color: #826十六; 
+            color: #795E69;
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+        .btn-primary {
+            background: var(--dusty-rose);
+            border: none;
+            padding: 14px 34px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 6px 14px rgba(217, 167, 181, 0.3);
+        }
+        .btn-primary:hover {
+            background: #C290A3;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 22px rgba(190, 130, 150, 0.25);
+        }
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .stat-item h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #CF9BB0;
+        }
+        .stat-item p {
+            font-size: 0.8rem;
+            color: #936F7C;
+        }
+        .hero-image {
+            flex: 1;
+            position: relative;
+        }
+        .hero-image img {
+            width: 100%;
+            border-radius: 48px;
+            object-fit: cover;
+            box-shadow: var(--shadow-soft);
+            background: #FCE9EF;
+            border: 2px solid #FFF1F5;
+        }
+        .floating-card {
+            position: absolute;
+            bottom: -15px;
+            left: -15px;
+            background: white;
+            padding: 12px 22px;
+            border-radius: 60px;
+            box-shadow: 0 12px 20px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            color: #A77286;
+            backdrop-filter: blur(2px);
+        }
+
+        /* Section header soft */
+        .section-header {
+            text-align: center;
+            margin: 70px 0 40px;
+        }
+        .section-tag {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #D9A2B5;
+            font-weight: 600;
+        }
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #583C46;
+            margin-top: 8px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin: 30px 0 30px;
+        }
+        .service-card {
+            background: var(--white-pure);
+            padding: 32px 24px;
+            border-radius: 32px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.02);
+            border: 1px solid #FCE4EC;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: #F7CFDD;
+            box-shadow: 0 20px 28px -12px rgba(200, 130, 150, 0.15);
+        }
+        .service-icon {
+            background: #FEF2F6;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 24px;
+            font-size: 2rem;
+            color: #DCA6B9;
+        }
+        .service-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+            color: #553B44;
+        }
+        .service-card p {
+            color: #806670;
+            font-size: 0.9rem;
+        }
+
+        /* Gallery Soft Pink */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+            margin: 30px 0 20px;
+        }
+        .gallery-item {
+            border-radius: 28px;
+            overflow: hidden;
+            height: 280px;
+            background: #FCE9EF;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.45s;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, rgba(236, 170, 190, 0.2), transparent);
+            opacity: 0;
+            transition: 0.2s;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Team Cards */
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0 50px;
+        }
+        .team-card {
+            text-align: center;
+            max-width: 220px;
+        }
+        .team-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 16px;
+            border: 3px solid #F5CFDD;
+            padding: 4px;
+            background: white;
+        }
+        .team-card h4 {
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #4D3240;
+        }
+        .team-card p {
+            font-size: 0.85rem;
+            color: #BA8A9C;
+        }
+
+        /* Testimonial soft pink */
+        .testimonial-section {
+            background: #FFF7FA;
+            border-radius: 56px;
+            padding: 55px 32px;
+            margin: 60px 0;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.02);
+        }
+        .testi-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 32px;
+        }
+        .testi-card {
+            background: white;
+            border-radius: 32px;
+            padding: 28px;
+            max-width: 320px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            border: 1px solid #FDE6EE;
+        }
+        .testi-card i {
+            color: #EBB6CA;
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+        .testi-text {
+            font-style: italic;
+            color: #6B4F5A;
+            margin: 16px 0;
+        }
+        .rating {
+            color: #F0B6CA;
+            letter-spacing: 2px;
+        }
+
+        /* CTA Booking */
+        .booking-cta {
+            background: linear-gradient(135deg, #FEF0F5 0%, #FCE5ED 100%);
+            border-radius: 52px;
+            padding: 56px 40px;
+            text-align: center;
+            margin: 50px 0 70px;
+            border: 1px solid #FFEAF0;
+        }
+        .booking-cta h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 12px;
+            color: #562E3F;
+        }
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--dusty-rose);
+            padding: 12px 34px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: 0.2s;
+            cursor: pointer;
+            color: #B27F91;
+        }
+        .btn-secondary:hover {
+            background: var(--dusty-rose);
+            color: white;
+            border-color: var(--dusty-rose);
+        }
+
+        footer {
+            border-top: 1px solid #FCE2EC;
+            padding: 48px 0 32px;
+            text-align: center;
+        }
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 {
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #754E60;
+        }
+        .footer-col p, .footer-col a {
+            color: #A27B89;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+        .social-links a {
+            margin-right: 18px;
+            font-size: 1.2rem;
+            color: #DEA7BB;
+            transition: 0.2s;
+        }
+        .social-links a:hover {
+            color: #BD859C;
+        }
+        .copyright {
+            font-size: 0.75rem;
+            color: #C39AAB;
+        }
+
+        /* Toast */
+        .toast-msg {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #5C3C49;
+            color: #FFF2F7;
+            padding: 12px 28px;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.2s;
+            z-index: 999;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+        }
+        .toast-msg.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+            .navbar {
+                flex-direction: column;
+            }
+            .nav-links {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero-stats {
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="toast-msg" id="toastNotif">🌸 Terima kasih! Tim kami akan segera menghubungi Anda 🌸</div>
+
+<nav class="container">
+    <div class="navbar">
+        <div class="logo">Rose<span>Blush</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#services">Layanan</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#contact" class="btn-nav">Reservasi</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <!-- Hero Section Soft Pink -->
+    <div class="container" id="home">
+        <div class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">🌸 PINK SERENITY & BEAUTY 🌸</div>
+                <h1>Pancarkan pesona <span>feminim</span> dengan sentuhan kelembutan</h1>
+                <p class="hero-description">Salon kecantikan dengan konsep soft pink elegance, terapis profesional, dan perawatan berkualitas untuk kulit & rambut impianmu.</p>
+                <button class="btn-primary" id="bookingHeroBtn">Booking Janji Temu <i class="fas fa-calendar-alt"></i></button>
+                <div class="hero-stats">
+                    <div class="stat-item"><h3>6+</h3><p>Tahun Berpengalaman</p></div>
+                    <div class="stat-item"><h3>3.2k+</h3><p>Klien Bahagia</p></div>
+                    <div class="stat-item"><h3>18</h3><p>Treatments</p></div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="./public/salon.png" alt="Suasana salon pink elegan">
+                <div class="floating-card">
+                    <i class="fas fa-spa" style="color:#E7AABC"></i> <span>✨ Facial & Relaxing Massage</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <div class="container" id="services">
+        <div class="section-header">
+            <div class="section-tag">Our Signature</div>
+            <h2>Perawatan Eksklusif</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card"><div class="service-icon"><i class="fas fa-facial"></i>🌸</div><h3>Pink Facial Glow</h3><p>Facial pengangkat sel kulit mati dengan ekstrak rose & peptide.</p></div>
+            <div class="service-card"><div class="service-icon"><i class="fas fa-hand-sparkles"></i>💖</div><h3>Rose Manicure</h3><p>Perawatan tangan + kutikula dengan aroma rose yang menenangkan.</p></div>
+            <div class="service-card"><div class="service-icon"><i class="fas fa-cut"></i>✂️</div><h3>Hair Blush</h3><p>Haircut & hair spa dengan sentuhan warna pastel pink tone.</p></div>
+            <div class="service-card"><div class="service-icon"><i class="fas fa-smile"></i>🧴</div><h3>Body Ritual</h3><p>Body scrub + massage menggunakan produk hypoallergenic.</p></div>
+        </div>
+    </div>
+
+    <!-- Gallery Soft Pink Elegance -->
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag">Our Gallery</div>
+            <h2>Momen Keanggunan</h2>
+        </div>
+        <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+
+    <!-- Professional Team -->
+    <div class="container" id="about">
+        <div class="section-header">
+            <div class="section-tag">Beauty Experts</div>
+            <h2>Tim Profesional Berpengalaman</h2>
+        </div>
+        <div class="team-grid">
+            <div class="team-card"><img class="team-img" src="https://randomuser.me/api/portraits/women/68.jpg" alt="therapist"><h4>Olivia Hartanti</h4><p>Skin Specialist</p></div>
+            <div class="team-card"><img class="team-img" src="https://randomuser.me/api/portraits/women/44.jpg" alt="hair stylist"><h4>Rania Putri</h4><p>Senior Hair Stylist</p></div>
+            <div class="team-card"><img class="team-img" src="https://randomuser.me/api/portraits/women/33.jpg" alt="therapist"><h4>Felicia Ang</h4><p>Body Massage</p></div>
+            <div class="team-card"><img class="team-img" src="https://randomuser.me/api/portraits/men/32.jpg" alt="manager"><h4>Michael Wijaya</h4><p>Beauty Consultant</p></div>
+        </div>
+    </div>
+
+    <!-- Testimonial -->
+    <div class="container">
+        <div class="testimonial-section">
+            <div class="section-header" style="margin-top:0">
+                <div class="section-tag">Testimonials</div>
+                <h2>Kata Mereka yang Telah Bersinar</h2>
+            </div>
+            <div class="testi-flex">
+                <div class="testi-card"><i class="fas fa-quote-left"></i><p class="testi-text">"Suasana salon super aesthetic pink, bikin betah. Hasil facial bikin kulit glowing natural, aku suka banget!"</p><div class="rating">★★★★★</div><h5>- Alyssa T.</h5></div>
+                <div class="testi-card"><i class="fas fa-quote-left"></i><p class="testi-text">"Potongan rambut rapi, therapist ramah dan sangat profesional. Rekomended untuk yang mau cari salon dengan vibes kalem."</p><div class="rating">★★★★★</div><h5>- Karin M.</h5></div>
+                <div class="testi-card"><i class="fas fa-quote-left"></i><p class="testi-text">"Perawatan body massage menghilangkan pegal dan baunya menenangkan. Harga worth it untuk kualitas bintang lima!"</p><div class="rating">★★★★★</div><h5>- Shinta Dewi</h5></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Booking Section -->
+    <div class="container" id="contact">
+        <div class="booking-cta">
+            <h3>Rasakan kemewahan perawatan soft pink</h3>
+            <p>Dapatkan konsultasi gratis dan potongan harga 20% untuk kunjungan pertama.</p>
+            <button class="btn-secondary" id="ctaBookingBtn"><i class="fas fa-calendar-check"></i> Pesan Sekarang</button>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-flex">
+            <div class="footer-col"><h4>RoseBlush</h4><p>Salon kecantikan dengan konsep <br>soft pink & perawatan premium.</p></div>
+            <div class="footer-col"><h4>Kontak</h4><p><i class="fas fa-map-pin"></i> Jl. Mawar Indah No. 12, Jakarta Pusat</p><p><i class="fas fa-phone-alt"></i> +62 821 4455 6789</p></div>
+            <div class="footer-col"><h4>Follow Us</h4><div class="social-links"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-tiktok"></i></a></div></div>
+        </div>
+        <div class="copyright">© 2025 RoseBlush – Beauty & Professional Salon. Soft Pink Elegance.</div>
+    </div>
+</footer>
+
+<script>
+    // Gallery dengan nuansa soft pink (placeholder image)
+    const galleryImages = [
+        "https://placehold.co/400x300/FDEBF2/E0AABB?text=Rose+Facial",
+        "https://placehold.co/400x300/FDE8F0/E0AABB?text=Soft+Hair+Styling",
+        "https://placehold.co/400x300/FEF0F5/E0AABB?text=Pink+Manicure",
+        "https://placehold.co/400x300/FDE6EF/E0AABB?text=Relaxing+Massage"
+    ];
+    function loadGallery() {
+        const galleryGrid = document.getElementById('galleryGrid');
+        if (!galleryGrid) return;
+        galleryGrid.innerHTML = '';
+        galleryImages.forEach(src => {
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+            item.innerHTML = `<img src="${src}" alt="Salon soft pink"><div class="gallery-overlay"></div>`;
+            galleryGrid.appendChild(item);
+        });
+    }
+    loadGallery();
+
+    // Toast message
+    function showMsg(text) {
+        const toast = document.getElementById('toastNotif');
+        if (!toast) return;
+        toast.textContent = text || "🌸 Terima kasih! Kami akan segera menghubungi Anda 🌸";
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2600);
+    }
+
+    // Booking buttons
+    const bookingHero = document.getElementById('bookingHeroBtn');
+    const bookingCta = document.getElementById('ctaBookingBtn');
+    const handleBooking = () => {
+        showMsg("📅 Reservasi diterima! CS kami akan konfirmasi via WhatsApp dalam 1x24 jam.");
+    };
+    if (bookingHero) bookingHero.addEventListener('click', handleBooking);
+    if (bookingCta) bookingCta.addEventListener('click', handleBooking);
+
+    // Smooth scroll for navigation
+    document.querySelectorAll('.nav-links a, .btn-nav').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const hash = this.getAttribute('href');
+            if (hash && hash !== '#' && hash.startsWith('#')) {
+                e.preventDefault();
+                const target = document.querySelector(hash);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else if (hash === '#contact') {
+                    const contactDiv = document.querySelector('#contact');
+                    if (contactDiv) contactDiv.scrollIntoView({ behavior: 'smooth' });
+                } else if (hash === '#home') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+        });
+    });
+
+    // Interactive service & gallery
+    document.querySelectorAll('.service-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const title = card.querySelector('h3')?.innerText || 'Layanan';
+            showMsg(`💖 Info layanan "${title}" — silakan reservasi untuk konsultasi gratis.`);
+        });
+    });
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('click', () => {
+            showMsg("✨ Lihat galeri lengkap di Instagram kami @roseblushbeauty ✨");
+        });
+    });
+</script>
+</body>
+</html>

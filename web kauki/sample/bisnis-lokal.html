@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Layanan Rental Mobil Terpercaya | Armada Prima</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1e293b;
+            scroll-behavior: smooth;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* header / navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            z-index: 100;
+            padding: 16px 0;
+        }
+
+        .nav-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 28px;
+            color: #2563eb;
+        }
+
+        .logo h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            background: linear-gradient(135deg, #1e293b, #2563eb);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #1e293b;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        .btn-outline {
+            border: 1.5px solid #2563eb;
+            background: transparent;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #2563eb;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-large {
+            padding: 14px 36px;
+            font-size: 1.1rem;
+        }
+
+        /* hero section */
+        .hero {
+            padding: 60px 0 40px 0;
+            background: linear-gradient(120deg, #f8fafc 0%, #eff6ff 100%);
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .hero-badge {
+            background: #dbeafe;
+            color: #1e40af;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #0f172a;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #334155;
+            margin-bottom: 30px;
+            max-width: 90%;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: 32px;
+        }
+
+        .stat-item h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #2563eb;
+        }
+
+        .hero-image {
+            flex: 1;
+            background: #e2e8f0;
+            border-radius: 36px;
+            overflow: hidden;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.15);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* services section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: #475569;
+            max-width: 700px;
+            margin: 0 auto 48px auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 32px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02), 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.25s;
+            border: 1px solid #eef2ff;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: #cbdffc;
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
+        }
+
+        .service-icon {
+            background: #eef2ff;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+
+        .service-icon i {
+            font-size: 32px;
+            color: #2563eb;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        /* fleet showcase */
+        .fleet {
+            background: #f9fafb;
+        }
+
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .car-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 12px 24px -12px rgba(0,0,0,0.08);
+            transition: 0.2s;
+        }
+
+        .car-card:hover {
+            transform: scale(1.01);
+        }
+
+        .car-img {
+            height: 190px;
+            background: #eef2ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #2563eb;
+        }
+
+        .car-info {
+            padding: 20px;
+        }
+
+        .car-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .car-specs {
+            display: flex;
+            gap: 16px;
+            color: #475569;
+            margin: 12px 0;
+            font-size: 0.85rem;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 12px 0;
+        }
+
+        .price span {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #5b6e8c;
+        }
+
+        /* why choose us */
+        .why-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .why-content {
+            flex: 1;
+        }
+
+        .why-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-weight: 500;
+        }
+
+        .feature-list i {
+            color: #2563eb;
+            font-size: 1.3rem;
+            width: 28px;
+        }
+
+        .why-image {
+            flex: 1;
+            background: #d9e6ff;
+            border-radius: 32px;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: #1e3a8a;
+        }
+
+        /* testimonial */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testi-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 28px;
+            border: 1px solid #eef2ff;
+            box-shadow: 0 6px 12px -6px rgba(0,0,0,0.05);
+        }
+
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 16px;
+        }
+
+        .testi-text {
+            font-style: normal;
+            color: #1e293b;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .customer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .avatar {
+            width: 44px;
+            height: 44px;
+            background: #cbd5e1;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #1e293b;
+        }
+
+        /* CTA section */
+        .cta {
+            background: linear-gradient(110deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 48px;
+            margin: 40px auto 80px;
+            padding: 56px 48px;
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            max-width: 550px;
+            margin: 0 auto 24px;
+            opacity: 0.9;
+        }
+
+        .cta .btn-primary {
+            background: white;
+            color: #0f172a;
+            box-shadow: none;
+        }
+
+        .cta .btn-primary:hover {
+            background: #f1f5f9;
+            transform: translateY(-2px);
+        }
+
+        /* footer */
+        .footer {
+            background: #f1f5f9;
+            padding: 48px 0 24px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 18px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #334155;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: 0.2s;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .social-icons a {
+            background: #e2e8f0;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e293b;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid #e2e8f0;
+            color: #475569;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-flex {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .hero-content p {
+                max-width: 100%;
+            }
+            .hero-stats {
+                flex-wrap: wrap;
+            }
+            .cta {
+                padding: 40px 24px;
+            }
+            .section {
+                padding: 50px 0;
+            }
+        }
+
+        .btn-wa {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            background: #25D366;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: 0.2s;
+            z-index: 99;
+            text-decoration: none;
+        }
+        .btn-wa:hover {
+            transform: scale(1.05);
+            background: #20b859;
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp floating button -->
+    <a href="https://wa.me/6281234567890?text=Halo%20saya%20butuh%20info%20rental%20mobil" class="btn-wa" target="_blank" aria-label="Hubungi WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-flex">
+            <div class="logo">
+                <i class="fas fa-car-side"></i>
+                <h1>ArmadaPrima</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#home">Beranda</a>
+                <a href="#layanan">Layanan</a>
+                <a href="#armada">Armada</a>
+                <a href="#testimoni">Testimoni</a>
+                <button class="btn-outline" id="navBookingBtn">Sewa Sekarang</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-shield-alt"></i> Terpercaya & Berlisensi Resmi</div>
+                <h1>Sewa Mobil Nyaman & Aman <br> Tanpa Ribet</h1>
+                <p>Armada lengkap, harga transparan, dan layanan antar jemput gratis area lokal. Mobil bersih, supir profesional, ready 24 jam.</p>
+                <button class="btn-primary btn-large" id="heroCtaBtn">Pesan Sekarang <i class="fas fa-arrow-right"></i></button>
+                <div class="hero-stats">
+                    <div class="stat-item"><h3>150+</h3><p>Armada Terawat</p></div>
+                    <div class="stat-item"><h3>2.300+</h3><p>Pelanggan Puas</p></div>
+                    <div class="stat-item"><h3>4.9</h3><p>Rating Google</p></div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- ilustrasi gambar mobil mewah -->
+                <img src="./public/bisnis-local.png" alt="Mobil rental premium">
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan unggulan -->
+    <section id="layanan" class="section">
+        <div class="container">
+            <h2 class="section-title">Layanan Premium Kami</h2>
+            <p class="section-sub">Nikmati kemudahan sewa mobil untuk berbagai kebutuhan, dari harian hingga wisata.</p>
+            <div class="services-grid">
+                <div class="service-card"><div class="service-icon"><i class="fas fa-calendar-week"></i></div><h3>Sewa Harian</h3><p>Fleksibel 12/24 jam, bebas kilometer dalam kota.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-users"></i></div><h3>Dengan Supir</h3><p>Supir berpengalaman, ramah, mengerti rute lokal.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-plane-departure"></i></div><h3>Antar Jemput Bandara</h3><p>Layanan door to door, tepat waktu.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-map-marked-alt"></i></div><h3>Tour & Wisata</h3><p>Paket wisata dengan itinerary custom.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Armada Populer -->
+    <section id="armada" class="section fleet">
+        <div class="container">
+            <h2 class="section-title">Armada Populer</h2>
+            <p class="section-sub">Koleksi mobil terbaru dengan kondisi prima dan perawatan rutin.</p>
+            <div class="fleet-grid">
+                <div class="car-card"><div class="car-img"><i class="fas fa-car fa-4x"></i></div><div class="car-info"><h3>Toyota Avanza</h3><div class="car-specs"><span><i class="fas fa-user-friends"></i> 7 Kursi</span><span><i class="fas fa-gas-pump"></i> Bensin</span></div><div class="price">Rp350.000 <span>/hari</span></div><button class="btn-outline bookingBtn" style="width:100%">Sewa Sekarang</button></div></div>
+                <div class="car-card"><div class="car-img"><i class="fas fa-car-side fa-4x"></i></div><div class="car-info"><h3>Honda Brio</h3><div class="car-specs"><span><i class="fas fa-user-friends"></i> 5 Kursi</span><span><i class="fas fa-tachometer-alt"></i> Hemat</span></div><div class="price">Rp280.000 <span>/hari</span></div><button class="btn-outline bookingBtn" style="width:100%">Sewa Sekarang</button></div></div>
+                <div class="car-card"><div class="car-img"><i class="fas fa-truck fa-4x"></i></div><div class="car-info"><h3>Mitsubishi Xpander</h3><div class="car-specs"><span><i class="fas fa-user-friends"></i> 7 Kursi</span><span><i class="fas fa-snowplow"></i> Matic</span></div><div class="price">Rp500.000 <span>/hari</span></div><button class="btn-outline bookingBtn" style="width:100%">Sewa Sekarang</button></div></div>
+                <div class="car-card"><div class="car-img"><i class="fas fa-caravan fa-4x"></i></div><div class="car-info"><h3>Toyota Innova</h3><div class="car-specs"><span><i class="fas fa-user-friends"></i> 8 Kursi</span><span>Diesel</span></div><div class="price">Rp650.000 <span>/hari</span></div><button class="btn-outline bookingBtn" style="width:100%">Sewa Sekarang</button></div></div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="btn-primary" id="lihatSemuaBtn">Lihat Semua Armada <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section">
+        <div class="container why-grid">
+            <div class="why-content">
+                <h2>Kenapa Harus <span style="color:#2563eb;">ArmadaPrima</span>?</h2>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> Mobil <strong>baru & terawat</strong> servis rutin</li>
+                    <li><i class="fas fa-file-invoice-dollar"></i> Harga <strong>transparan tanpa biaya tersembunyi</strong></li>
+                    <li><i class="fas fa-headset"></i> Layanan pelanggan 24/7 & bantuan darurat</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Antar jemput gratis <strong>area lokal</strong> (kota dan sekitarnya)</li>
+                    <li><i class="fas fa-hand-holding-heart"></i> Asuransi kecelakaan & perlindungan tambahan</li>
+                </ul>
+            </div>
+            <div class="why-image">
+                <i class="fas fa-user-check fa-5x"></i> <span style="display:block; margin-top:12px; font-weight:600;">+10.000 pelanggan dipercaya</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni -->
+    <section id="testimoni" class="section" style="background: #F9F9FF;">
+        <div class="container">
+            <h2 class="section-title">Apa Kata Mereka?</h2>
+            <p class="section-sub">Pengalaman nyata pelanggan setia ArmadaPrima</p>
+            <div class="testimonial-grid">
+                <div class="testi-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="testi-text">"Mobil bersih, AC dingin, proses cepat. Supirnya ramah banget dan tau jalan pintas. next pasti rental lagi!"</div><div class="customer"><div class="avatar">RD</div><div><strong>Rina Dewi</strong><br>Perjalanan Dinas</div></div></div>
+                <div class="testi-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="testi-text">"Harga bersaing, pelayanan profesional. Mobil Xpander seperti baru, recommended buat keluarga."</div><div class="customer"><div class="avatar">AS</div><div><strong>Andi Saputra</strong><br>Wisata Keluarga</div></div></div>
+                <div class="testi-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><div class="testi-text">"Respons cepat via WA, antarmobil datang tepat waktu. Sangat terpercaya, jadi langganan kantor."</div><div class="customer"><div class="avatar">TJ</div><div><strong>Tari J.</strong><br>Event Organizer</div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <div class="container">
+        <div class="cta">
+            <h2>Siap bepergian dengan kendaraan terbaik?</h2>
+            <p>Hubungi kami sekarang atau booking langsung, gratis antar jemput dalam kota. Mobil favoritmu menunggu!</p>
+            <button class="btn-primary" id="ctaFooterBtn"><i class="fab fa-whatsapp"></i> Konsultasi Gratis</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4><i class="fas fa-car-side"></i> ArmadaPrima Rent</h4>
+                    <p>Rental mobil terpercaya sejak 2018. Melayani kebutuhan perjalanan dinas, liburan, dan event.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontak</h4>
+                    <p><i class="fas fa-map-pin"></i> Jl. Raya Kedung Cowek No.22, Surabaya</p>
+                    <p><i class="fas fa-phone-alt"></i> +62 812 3456 7890</p>
+                    <p><i class="fas fa-envelope"></i> hello@armadaprima.id</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Jam Operasional</h4>
+                    <p>Senin - Minggu : 08.00 - 22.00</p>
+                    <p>Layanan Darurat 24 Jam</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Informasi</h4>
+                    <a href="#">Syarat & Ketentuan</a>
+                    <a href="#">Kebijakan Privasi</a>
+                    <a href="#">FAQ</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 ArmadaPrima Rental Mobil. All rights reserved. Dikelola secara profesional dan terpercaya.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popup sederhana demo booking (simulasi) -->
+    <div id="bookingModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); align-items:center; justify-content:center; z-index:1000;">
+        <div style="background:white; max-width:400px; margin:20px; padding:32px; border-radius:32px; text-align:center;">
+            <i class="fas fa-check-circle" style="font-size:48px; color:#2563eb;"></i>
+            <h3 style="margin: 16px 0 8px;">Booking Cepat</h3>
+            <p>Silakan hubungi tim kami via WhatsApp untuk konfirmasi unit & harga terbaik.</p>
+            <button id="closeModalBtn" style="background:#2563eb; border:none; color:white; padding:10px 20px; border-radius:40px; margin-top:12px; width:100%;">Tutup & Hubungi WA</button>
+        </div>
+    </div>
+
+    <script>
+        // Modals and WhatsApp trigger
+        const modal = document.getElementById('bookingModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const allBookingBtns = document.querySelectorAll('.bookingBtn');
+        const heroCta = document.getElementById('heroCtaBtn');
+        const navBooking = document.getElementById('navBookingBtn');
+        const ctaFooter = document.getElementById('ctaFooterBtn');
+        const lihatSemua = document.getElementById('lihatSemuaBtn');
+
+        function openModal() {
+            if(modal) modal.style.display = 'flex';
+        }
+        function closeModalAndWA() {
+            if(modal) modal.style.display = 'none';
+            window.open('https://wa.me/6281234567890?text=Halo%20saya%20ingin%20sewa%20mobil%20di%20ArmadaPrima', '_blank');
+        }
+
+        function directWA() {
+            window.open('https://wa.me/6281234567890?text=Halo%20saya%20butuh%20info%20rental%20mobil', '_blank');
+        }
+
+        // modal events
+        if(closeModalBtn) closeModalBtn.addEventListener('click', closeModalAndWA);
+        function attachBookingEvent(btn) {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal();
+            });
+        }
+
+        allBookingBtns.forEach(btn => attachBookingEvent(btn));
+        if(heroCta) attachBookingEvent(heroCta);
+        if(navBooking) attachBookingEvent(navBooking);
+        if(ctaFooter) ctaFooter.addEventListener('click', (e) => {
+            e.preventDefault();
+            directWA();
+        });
+        if(lihatSemua) lihatSemua.addEventListener('click', () => {
+            alert("🚗 Untuk melihat semua armada lengkap dengan harga spesial, silakan hubungi CS kami via WhatsApp. Terima kasih!");
+            directWA();
+        });
+        // klik di luar modal close sederhana
+        window.addEventListener('click', (e) => {
+            if(e.target === modal) modal.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

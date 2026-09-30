@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KaukiDigital | Digitalisasi Bisnis Jadi Mudah</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-tertiary-fixed": "#261a00",
+                "tertiary-container": "#3f2d00",
+                "primary-fixed-dim": "#bdc2ff",
+                "on-secondary-fixed-variant": "#00429b",
+                "tertiary": "#251900",
+                "primary-container": "#1a237e",
+                "surface-container-high": "#e7e8e9",
+                "primary": "#000666",
+                "surface-container-highest": "#e1e3e4",
+                "on-background": "#191c1d",
+                "surface-tint": "#4c56af",
+                "secondary-fixed": "#d9e2ff",
+                "background": "#f8f9fa",
+                "on-error-container": "#93000a",
+                "surface-bright": "#f8f9fa",
+                "on-secondary-fixed": "#001945",
+                "on-tertiary": "#ffffff",
+                "inverse-on-surface": "#f0f1f2",
+                "on-surface-variant": "#454652",
+                "on-error": "#ffffff",
+                "outline-variant": "#c6c5d4",
+                "on-secondary": "#ffffff",
+                "inverse-primary": "#bdc2ff",
+                "on-secondary-container": "#fefcff",
+                "secondary-container": "#0f6df3",
+                "surface-container-lowest": "#ffffff",
+                "error": "#ba1a1a",
+                "primary-fixed": "#e0e0ff",
+                "secondary": "#0056c5",
+                "inverse-surface": "#2e3132",
+                "on-primary": "#ffffff",
+                "secondary-fixed-dim": "#b0c6ff",
+                "on-surface": "#191c1d",
+                "error-container": "#ffdad6",
+                "on-primary-container": "#8690ee",
+                "surface-container": "#edeeef",
+                "on-tertiary-fixed-variant": "#5b4300",
+                "on-tertiary-container": "#c09000",
+                "surface-dim": "#d9dadb",
+                "on-primary-fixed-variant": "#343d96",
+                "tertiary-fixed": "#ffdf9e",
+                "on-primary-fixed": "#000767",
+                "surface-variant": "#e1e3e4",
+                "outline": "#767683",
+                "surface-container-low": "#f3f4f5",
+                "tertiary-fixed-dim": "#fabd00",
+                "surface": "#f8f9fa"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "container-max": "1280px",
+                "gutter": "24px",
+                "margin-mobile": "16px",
+                "base": "8px",
+                "margin-desktop": "40px"
+            },
+            "fontFamily": {
+                "body-md": ["Open Sans"],
+                "headline-lg": ["Open Sans"],
+                "body-lg": ["Open Sans"],
+                "headline-lg-mobile": ["Open Sans"],
+                "label-sm": ["Open Sans"],
+                "label-md": ["Open Sans"],
+                "headline-md": ["Open Sans"],
+                "display-lg": ["Open Sans"]
+            },
+            "fontSize": {
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(15, 109, 243, 0.05), transparent),
+                        radial-gradient(circle at bottom left, rgba(26, 35, 126, 0.05), transparent);
+        }
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant shadow-sm h-16">
+<div class="flex justify-between items-center h-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-base">
+<img alt="KaukiDigital Logo" class="h-8 md:h-10 object-contain" src="data:image/png;base64,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"/>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-200" href="#services">Services</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-200" href="#services">Pricing</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-200" href="#why-us">Why Us</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-200" href="#faq">FAQ</a>
+</nav>
+<div class="flex items-center gap-base">
+<a class="bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-full font-label-md text-label-md transition-all duration-150 active:scale-95 flex items-center gap-2" href="https://wa.me/6283835782376">
+<span class="material-symbols-outlined text-sm">rocket_launch</span>
+                    WhatsApp
+                </a>
+</div>
+</div>
+</header>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative min-h-[80vh] flex items-center justify-center hero-gradient px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="max-w-container-max mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
+<div class="text-center md:text-left space-y-6">
+<span class="bg-secondary-container/10 text-secondary px-4 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider">Solusi Digital MSME Indonesia</span>
+<h1 class="font-display-lg text-[40px] md:text-display-lg leading-tight text-primary">
+                        Website Profesional yang<br/><span class="text-secondary">Membantu Bisnismu Tumbuh</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto md:mx-0">
+                        Kami bantu bikin website, pilih domain, dan siapkan email bisnis dengan cara yang mudah dan ramah, cepat, aman, dan siap membantu jualanmu.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+<a href="#contact" class="inline-flex items-center justify-center bg-tertiary-fixed-dim text-on-tertiary-fixed px-8 py-4 rounded-lg font-label-md text-label-md shadow-lg hover:shadow-xl transition-all duration-200 active:scale-95">
+                            Dapatkan Konsultasi Gratis
+                        </a>
+<a href="#services" class="border border-outline px-8 py-4 rounded-lg font-label-md text-label-md hover:bg-surface-container transition-all duration-200">
+                            Paket & Harga
+                        </a>
+</div>
+</div>
+<div class="relative hidden md:block">
+<div class="w-full aspect-square bg-white rounded-xl shadow-2xl overflow-hidden border border-outline-variant p-2 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+<img class="w-full h-full object-cover rounded-lg" data-alt="A clean and professional digital workspace setting with a modern laptop showing a sleek business dashboard. The scene is illuminated with soft natural morning light, featuring a minimalist desk with a small green plant. The aesthetic is corporate yet airy, using a primary palette of navy blue and crisp whites to convey trust and digital efficiency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMmhBS_-G4cmZfr5nRhBjg0wpOUhTeAadyPxFLzZbVsRnuOJcBMhCH-vJ-5Y1efHlnB87T1DU6bOc7-L6Fuf-r7vafgMktx59bRt0YQMXSDmNzTahDZzLjesmt38hxmM_D5FTujzdF1IDET40Y2cOXnCJ64vd2DH53Rup9rKpr4kXldIuFwDzqqAfoxD1oFmLeaYqGbwHc3PgceFtxsRztHsUhCi5UlPZ_jmOD_ZtpslRJxBAO3_sUNlAXe6xLzI_oSi6fE3v1EgQ"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-secondary-container text-white p-6 rounded-xl shadow-xl animate-bounce max-w-[220px]">
+    <p class="font-headline-md leading-tight text-left">Siap membantu<br/>bisnismu berkembang</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Services & Pricing -->
+<section class="py-24 bg-white px-margin-mobile md:px-margin-desktop" id="services">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-primary">Layanan Kami</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Investasi cerdas untuk pertumbuhan bisnis berkelanjutan di era digital.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Landing Page -->
+<div class="group border border-outline-variant rounded-xl p-8 hover:border-primary transition-all duration-300 bg-surface">
+<div class="mb-6">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">web</span>
+<h3 class="font-headline-md text-primary">Landing Page </h3>
+<p class="text-on-surface-variant mt-2">Desain sederhana dan menarik yang mudah dipahami pelanggan, kami bantu setup agar siap digunakan.</p>
+</div>
+<div class="mb-8">
+<p class="text-label-sm text-on-surface-variant">Mulai dari</p>
+<p class="font-display-lg text-primary text-2xl md:text-3xl">Rp750.000</p>
+</div>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-2 text-body-md">
+<span class="material-symbols-outlined text-green-600 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Mobile Responsive
+                            </li>
+<li class="flex items-center gap-2 text-body-md">
+<span class="material-symbols-outlined text-green-600 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                SEO Optimized
+                            </li>
+</ul>
+<a href="#contact" class="w-full inline-block text-center py-3 rounded-lg border border-primary text-primary font-label-md group-hover:bg-primary group-hover:text-white transition-all">Pilih Paket</a>
+</div>
+<!-- Domain -->
+<div class="group border border-outline-variant rounded-xl p-8 hover:border-primary transition-all duration-300 bg-surface relative overflow-hidden">
+<div class="absolute top-4 right-4 bg-tertiary-fixed-dim text-[10px] font-bold px-2 py-1 rounded">POPULER</div>
+<div class="mb-6">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">language</span>
+<h3 class="font-headline-md text-primary">Domain & DNS</h3>
+<p class="text-on-surface-variant mt-2">Kami bantu pilih nama domain yang mudah diingat, atur DNS, dan jaga privasi brand Anda.</p>
+</div>
+<div class="mb-8">
+<p class="text-label-sm text-on-surface-variant">Mulai dari</p>
+<p class="font-display-lg text-primary text-2xl md:text-3xl">Rp300.000<span class="text-sm font-normal">/tahun</span></p>
+</div>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-2 text-body-md">
+<span class="material-symbols-outlined text-green-600 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Full Control Panel
+                            </li>
+<li class="flex items-center gap-2 text-body-md">
+<span class="material-symbols-outlined text-green-600 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                DNS Management
+                            </li>
+</ul>
+<a href="#contact" class="w-full inline-block text-center py-3 rounded-lg border border-primary text-primary group-hover:bg-primary group-hover:text-white transition-all">Cari Domain</a>
+</div>
+<!-- Email Bisnis -->
+<div class="group border border-outline-variant rounded-xl p-8 hover:border-primary transition-all duration-300 bg-surface">
+<div class="mb-6">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">mail</span>
+<h3 class="font-headline-md text-primary">Email Profesional</h3>
+<p class="text-on-surface-variant mt-2">Email name@bisnismu.com yang mudah dipakai di HP dan laptop, supaya komunikasi dengan pelanggan terasa lebih profesional.</p>
+</div>
+<div class="mb-8">
+<p class="text-label-sm text-on-surface-variant">Mulai dari</p>
+<p class="font-display-lg text-primary text-2xl md:text-3xl">Rp69.000<span class="text-sm font-normal">/user/bln</span></p>
+</div>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-2 text-body-md">
+<span class="material-symbols-outlined text-green-600 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Anti-Spam Protection
+                            </li>
+<li class="flex items-center gap-2 text-body-md">
+<span class="material-symbols-outlined text-green-600 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Multi-Device Sync
+                            </li>
+</ul>
+<a href="#contact" class="w-full inline-block text-center py-3 rounded-lg border border-primary text-primary group-hover:bg-primary group-hover:text-white transition-all">Daftar Email</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Example Landing Page Gallery -->
+<section id="examples" class="py-24 bg-white px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-14 space-y-4">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-primary">Contoh Landing Page yang Bisa Kami Buat</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Lihat inspirasi desain landing page yang ramah untuk UMKM dan dirancang untuk membuat pengunjung langsung ingin menghubungi Anda.</p>
+<a href="examples.html" class="cta-secondary inline-flex mx-auto">Lihat Semua Contoh</a>
+</div>
+<div class="grid gap-6 md:grid-cols-3">
+<div class="rounded-3xl overflow-hidden border border-outline-variant shadow-sm hover:shadow-lg transition-shadow duration-300">
+<img class="w-full h-64 object-cover" src="./public/toko-online.png" alt="Contoh landing page web toko online" />
+<div class="p-6 bg-surface">
+<p class="font-label-md text-secondary uppercase tracking-[0.14em] mb-2">Toko Online</p>
+<h3 class="font-headline-md text-primary mb-2">Desain bersih untuk produk dan promo</h3>
+<p class="text-on-surface-variant text-sm">Landing page yang menampilkan produk terbaik, testimoni pelanggan, dan tombol pesan langsung.</p>
+</div>
+</div>
+<div class="rounded-3xl overflow-hidden border border-outline-variant shadow-sm hover:shadow-lg transition-shadow duration-300">
+<img class="w-full h-64 object-cover" src="./public/konsultan.png" alt="Contoh landing page web konsultan" />
+<div class="p-6 bg-surface">
+<p class="font-label-md text-secondary uppercase tracking-[0.14em] mb-2">Konsultan</p>
+<h3 class="font-headline-md text-primary mb-2">Tampil percaya diri dan profesional</h3>
+<p class="text-on-surface-variant text-sm">Landing page yang fokus memperkenalkan jasa konsultasi dan membuat calon klien langsung ingin menghubungi Anda.</p>
+</div>
+</div>
+<div class="rounded-3xl overflow-hidden border border-outline-variant shadow-sm hover:shadow-lg transition-shadow duration-300">
+<img class="w-full h-64 object-cover" src="./public/salon.png" alt="Contoh landing page web salon" />
+<div class="p-6 bg-surface">
+<p class="font-label-md text-secondary uppercase tracking-[0.14em] mb-2">Salon & Jasa</p>
+<h3 class="font-headline-md text-primary mb-2">Tata letak layanan yang hangat</h3>
+<p class="text-on-surface-variant text-sm">Desain yang menonjolkan layanan, jadwal, dan kemudahan booking untuk pelanggan salon atau layanan lain.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Builder Comparison -->
+<section class="py-24 bg-surface-container px-margin-mobile md:px-margin-desktop">
+<div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm border border-outline-variant overflow-hidden">
+<div class="p-8 border-b border-outline-variant bg-primary text-white">
+<h3 class="font-headline-md text-center">Kenapa Pakai Email Bisnis?</h3>
+</div>
+<div class="grid grid-cols-2 divide-x divide-outline-variant">
+<div class="p-8">
+<p class="font-label-md text-error mb-4 uppercase">Email Gratisan</p>
+<ul class="space-y-4">
+<li class="flex gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-error">close</span>
+                                alamat.email@gmail.com
+                            </li>
+<li class="flex gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-error">close</span>
+                                Kurang Profesional untuk Klien Bisnis
+                            </li>
+<li class="flex gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-error">close</span>
+                                Risiko Keamanan & Keandalan
+                            </li>
+</ul>
+</div>
+<div class="p-8 bg-primary/5">
+<p class="font-label-md text-secondary mb-4 uppercase">Email Bisnis Profesional</p>
+<ul class="space-y-4">
+<li class="flex gap-2 text-primary text-sm font-bold">
+<span class="material-symbols-outlined text-green-600">verified</span>
+                                nama@bisnisanda.com
+                            </li>
+<li class="flex gap-2 text-primary text-sm font-bold">
+<span class="material-symbols-outlined text-green-600">verified</span>
+                                Meningkatkan Kredibilitas Pelanggan
+                            </li>
+<li class="flex gap-2 text-primary text-sm font-bold">
+<span class="material-symbols-outlined text-green-600">verified</span>
+                                Keamanan & Kontrol Penuh atas Data
+                            </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Us -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-white" id="why-us">
+<div class="max-w-container-max mx-auto">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-primary mb-8">Kenapa Memilih KaukiDigital?</h2>
+<div class="grid sm:grid-cols-2 gap-base">
+<div class="p-6 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-secondary mb-4">hub</span>
+<h4 class="font-label-md text-primary mb-2">One-stop solution</h4>
+<p class="text-sm text-on-surface-variant">Website, Domain, Email dalam satu atap.</p>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-secondary mb-4">verified_user</span>
+<h4 class="font-label-md text-primary mb-2">Credibility</h4>
+<p class="text-sm text-on-surface-variant">Meningkatkan kepercayaan customer Anda.</p>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-secondary mb-4">bolt</span>
+<h4 class="font-label-md text-primary mb-2">No hassle</h4>
+<p class="text-sm text-on-surface-variant">Kami yang urus teknisnya, Anda fokus jualan.</p>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-secondary mb-4">headset_mic</span>
+<h4 class="font-label-md text-primary mb-2">Support 24/7</h4>
+<p class="text-sm text-on-surface-variant">Tim bantuan siap sedia kapanpun dibutuhkan.</p>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="highlight-box relative z-10">
+    <p class="text-body-lg mb-6">Kami bantu membuat website yang nyata membantu usaha kecil mendapatkan pelanggan baru — tanpa ribet teknis. Prosesnya jelas, cepat, dan disesuaikan dengan kebutuhan bisnismu.</p>
+    <p class="text-on-primary/80 mb-6">Dapatkan konsultasi awal gratis dan panduan langkah demi langkah. Kami bantu dari konten sampai website live, dan siap bantu jika perlu revisi.</p>
+    <div class="flex items-center gap-4">
+        <a href="#contact" class="cta-primary">Ayo Konsultasi</a>
+        <a href="#contact" class="cta-secondary">Dapatkan Penawaran</a>
+    </div>
+</div>
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-tertiary-fixed-dim rounded-full -z-0 opacity-50"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section class="py-24 bg-surface px-margin-mobile md:px-margin-desktop" id="faq">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-primary text-center mb-12">Paling Sering Ditanyakan</h2>
+<div class="space-y-4">
+<details class="group bg-white rounded-xl border border-outline-variant overflow-hidden" open="">
+<summary class="p-6 flex justify-between items-center cursor-pointer list-none">
+<span class="font-label-md text-primary">Berapa lama proses pembuatannya?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant text-body-md border-t border-outline-variant">
+                            Rata-rata Landing Page selesai dalam 3-5 hari kerja setelah semua konten kami terima.
+                        </div>
+</details>
+<details class="group bg-white rounded-xl border border-outline-variant overflow-hidden">
+<summary class="p-6 flex justify-between items-center cursor-pointer list-none">
+<span class="font-label-md text-primary">Apakah saya perlu mengerti programming?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant text-body-md border-t border-outline-variant">
+                            Tidak sama sekali! KaukiDigital mengurus semua aspek teknis mulai dari setup hingga maintenance.
+                        </div>
+</details>
+<details class="group bg-white rounded-xl border border-outline-variant overflow-hidden">
+<summary class="p-6 flex justify-between items-center cursor-pointer list-none">
+<span class="font-label-md text-primary">Bagaimana metode pembayarannya?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant text-body-md border-t border-outline-variant">
+                            Kami menerima pembayaran via Transfer Bank (BCA, Mandiri) dan berbagai E-Wallet populer.
+                        </div>
+</details>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20 px-margin-mobile md:px-margin-desktop bg-primary text-white text-center">
+<div class="max-w-2xl mx-auto space-y-8">
+<h2 class="font-headline-lg">Siap Tampil Profesional dan Dilirik Pelanggan?</h2>
+<p class="text-body-lg opacity-90">Mulai dengan konsultasi singkat, kami bantu susun strategi website yang efektif untuk bisnis Anda.</p>
+<a href="#contact" class="inline-block bg-tertiary-fixed-dim text-on-tertiary-fixed px-10 py-5 rounded-lg font-headline-md shadow-xl hover:scale-105 transition-transform">
+                    Konsultasi Gratis
+                </a>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 bg-surface px-margin-mobile md:px-margin-desktop">
+<div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-sm">
+<h2 class="font-headline-md text-primary text-center mb-6">Mulai Proyek Anda</h2>
+<p class="text-on-surface-variant text-center mb-6">Isi form singkat di bawah ini atau hubungi kami via WhatsApp. Kami akan merespon dalam 1x24 jam kerja.</p>
+<form class="grid gap-4" onsubmit="return false;">
+<input type="text" name="name" placeholder="Nama Lengkap" class="p-3 border rounded" required>
+<input type="email" name="email" placeholder="Email" class="p-3 border rounded" required>
+<select name="service" class="p-3 border rounded">
+<option value="Landing Page">Landing Page</option>
+<option value="Domain">Pendaftaran Domain</option>
+<option value="Email">Email Bisnis</option>
+</select>
+<textarea name="message" placeholder="Deskripsi singkat kebutuhan Anda" class="p-3 border rounded" rows="4"></textarea>
+<div class="flex flex-col sm:flex-row gap-4">
+<button type="button" onclick="sendWhatsAppMessage()" class="bg-primary text-white px-6 py-3 rounded">Kirim & Konsultasi</button>
+<a href="mailto:hello@kauki.digital" class="hidden border border-primary px-6 py-3 rounded text-primary inline-flex items-center justify-center">Kirim via Email</a>
+</div>
+</form>
+</div>
+</section>
+
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-center gap-base">
+<div class="space-y-4 text-center md:text-left">
+<img alt="KaukiDigital Logo" class="h-10 mx-auto md:mx-0" src="data:image/png;base64,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"/>
+<p class="text-on-surface-variant max-w-xs font-body-md text-body-md">Solusi transformasi digital terpercaya untuk MSME modern di Indonesia.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 py-8 md:py-0">
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200 font-label-sm text-label-sm" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200 font-label-sm text-label-sm" href="#">Pricing</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200 font-label-sm text-label-sm" href="#">Why Us</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200 font-label-sm text-label-sm" href="#">FAQ</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200 font-label-sm text-label-sm" href="#">Contact</a>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+</div>
+</div>
+<div class="border-t border-outline-variant py-6 text-center text-on-surface-variant/60 font-label-sm text-label-sm">
+            © 2026 KaukiDigital. All rights reserved.
+        </div>
+</footer>
+<script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+
+        function sendWhatsAppMessage() {
+            const name = document.querySelector('[name=name]').value.trim();
+            const email = document.querySelector('[name=email]').value.trim();
+            const service = document.querySelector('[name=service]').value;
+            const message = document.querySelector('[name=message]').value.trim();
+
+            if (!name || !email || !message) {
+                alert('Silakan lengkapi Nama, Email, dan Deskripsi kebutuhan Anda supaya kami dapat membantu dengan tepat.');
+                return;
+            }
+
+            const text = `Halo KaukiDigital, saya ingin membuat: ${service}. Nama: ${name}. Email: ${email}. Pesan: ${message}`;
+            window.location.href = 'https://wa.me/6283835782376?text=' + encodeURIComponent(text);
+        }
+    </script>
+</body></html>
